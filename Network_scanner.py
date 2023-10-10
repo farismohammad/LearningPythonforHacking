@@ -1,3 +1,12 @@
+# Date : October 10th 2023
+# Original Author : Zaid Sabih , Zsecurity
+# Edited by : Faris Mohammad 
+# Revision : 2
+# Note :  This program can be run as a command in a terminal.
+
+# Description : This program changes scans the network and returns the connected devices IP and MAC.
+
+
 import scapy.all as scapy
 import argparse
  

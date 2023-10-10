@@ -1,3 +1,12 @@
+# Date : October 10th 2023
+# Original Author : Zaid Sabih , Zsecurity
+# Edited by : Faris Mohammad 
+# Revision : 1
+# Note : 
+
+# Description : This program changes the MAC address of a chosen interface.
+#               This program can be run as a command in a terminal.
+
 import subprocess
 import optparse
 import re
