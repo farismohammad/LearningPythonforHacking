@@ -25,7 +25,7 @@ def get_arguments():
 
 
 def change_mac(interface, new_mac):
-    print("[+] Changing MAC address for " + interface + "to " + new_mac)
+    print("[+] Changing MAC address for " + interface + " to " + new_mac)
     subprocess.call(["ifconfig", interface, "down"])
     subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
     subprocess.call(["ifconfig", interface, "up"])
@@ -48,7 +48,7 @@ print("Current MAC = " + str(current_mac))
 change_mac(options.interface, options.new_mac)
 
 current_mac = get_mac(options.interface)
-if current_mac == options.new_mac:
+if current_mac == options.new_mac.lower():
     print("[+] MAC address was successfully changed to " + current_mac)
 else:
     print("[-] MAC address did not get changed")

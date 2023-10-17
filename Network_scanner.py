@@ -1,7 +1,7 @@
 # Date : October 10th 2023
 # Original Author : Zaid Sabih , Zsecurity
 # Edited by : Faris Mohammad 
-# Revision : 2
+# Revision : 3
 # Note :  This program can be run as a command in a terminal.
 
 # Description : This program changes scans the network and returns the connected devices IP and MAC.
@@ -24,15 +24,18 @@ def scan(ip):
  
     clients_list = []
     for element in answered:
-        client_dict = {"ip": element[1].psrc, "mac": element[1].hwrc}
+        client_dict = {"ip": element[1].psrc, "mac": element[1].hwsrc}
         clients_list.append(client_dict)
     return clients_list
  
 def print_result(result_list):
-    print("IP\t\tMAC Address\n--------------------------------------")
+    print("IP\t\t\tMAC Address\n-------------------------------------------")
     for client in result_list:
-        print(client["ip"] + "\t\t" + client["MAC"])
+        print(client["ip"] + "\t\t" + client["mac"])
  
 options = get_arguments()
 scan_result = scan(options.target)
 print_result(scan_result)
+
+
+
